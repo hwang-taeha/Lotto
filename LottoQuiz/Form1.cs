@@ -104,6 +104,11 @@ namespace LottoQuiz
             InitializeComponent();
         }
 
+        private void 패턴분석ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new FrmPattern().Show();
+        }
+
         //private void button1_Click(object sender, EventArgs e)
         //{            
         //    for (int i = 1; i < 5; i++)

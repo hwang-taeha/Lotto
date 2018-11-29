@@ -34,6 +34,8 @@
             this.각번호를뽑은순서ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.이전로또당첨확인ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.패턴분석ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.패턴분석ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +43,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.번호별ToolStripMenuItem,
-            this.testToolStripMenuItem});
+            this.testToolStripMenuItem,
+            this.패턴분석ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(811, 24);
@@ -86,6 +89,21 @@
             this.testToolStripMenuItem.Text = "test";
             this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
             // 
+            // 패턴분석ToolStripMenuItem
+            // 
+            this.패턴분석ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.패턴분석ToolStripMenuItem1});
+            this.패턴분석ToolStripMenuItem.Name = "패턴분석ToolStripMenuItem";
+            this.패턴분석ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.패턴분석ToolStripMenuItem.Text = "패턴분석";
+            // 
+            // 패턴분석ToolStripMenuItem1
+            // 
+            this.패턴분석ToolStripMenuItem1.Name = "패턴분석ToolStripMenuItem1";
+            this.패턴분석ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.패턴분석ToolStripMenuItem1.Text = "패턴분석";
+            this.패턴분석ToolStripMenuItem1.Click += new System.EventHandler(this.패턴분석ToolStripMenuItem1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -110,6 +128,8 @@
         private System.Windows.Forms.ToolStripMenuItem 각번호를뽑은순서ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 이전로또당첨확인ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 패턴분석ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 패턴분석ToolStripMenuItem1;
     }
 }
 

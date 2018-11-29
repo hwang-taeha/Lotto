@@ -76,6 +76,12 @@
     <Compile Include="FrmOrder.Designer.cs">
       <DependentUpon>FrmOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPattern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPattern.Designer.cs">
+      <DependentUpon>FrmPattern.cs</DependentUpon>
+    </Compile>
     <Compile Include="LottoRecommand.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOrder.resx">
       <DependentUpon>FrmOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPattern.resx">
+      <DependentUpon>FrmPattern.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LottoRecommand.resx">
       <DependentUpon>LottoRecommand.cs</DependentUpon>
