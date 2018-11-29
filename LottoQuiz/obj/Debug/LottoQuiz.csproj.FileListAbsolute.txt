@@ -66,3 +66,4 @@ C:\Lotto\LottoQuiz\obj\Debug\LottoQuiz.csproj.CoreCompileInputs.cache
 C:\Lotto\LottoQuiz\obj\Debug\LottoQuiz.csproj.CopyComplete
 C:\Lotto\LottoQuiz\obj\Debug\LottoQuiz.exe
 C:\Lotto\LottoQuiz\obj\Debug\LottoQuiz.pdb
+C:\Lotto\LottoQuiz\obj\Debug\LottoQuiz.Frmcontinuity.resources
