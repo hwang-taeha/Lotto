@@ -33,7 +33,6 @@
             this.txtNo3 = new System.Windows.Forms.TextBox();
             this.txtNo6 = new System.Windows.Forms.TextBox();
             this.txtNo5 = new System.Windows.Forms.TextBox();
-            this.txtBonus = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,7 +40,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.DBGridView = new System.Windows.Forms.DataGridView();
             this.txtNo1 = new System.Windows.Forms.TextBox();
@@ -87,14 +85,6 @@
             this.txtNo5.Size = new System.Drawing.Size(23, 21);
             this.txtNo5.TabIndex = 4;
             this.txtNo5.TextChanged += new System.EventHandler(this.txtNo1_TextChanged_1);
-            // 
-            // txtBonus
-            // 
-            this.txtBonus.Location = new System.Drawing.Point(237, 71);
-            this.txtBonus.Name = "txtBonus";
-            this.txtBonus.Size = new System.Drawing.Size(23, 21);
-            this.txtBonus.TabIndex = 6;
-            this.txtBonus.TextChanged += new System.EventHandler(this.txtNo1_TextChanged_1);
             // 
             // label1
             // 
@@ -159,15 +149,6 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "6";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(235, 56);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 12);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Bonus";
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(310, 34);
@@ -202,7 +183,6 @@
             this.ClientSize = new System.Drawing.Size(473, 444);
             this.Controls.Add(this.DBGridView);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -210,7 +190,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtBonus);
             this.Controls.Add(this.txtNo6);
             this.Controls.Add(this.txtNo5);
             this.Controls.Add(this.txtNo4);
@@ -219,6 +198,7 @@
             this.Controls.Add(this.txtNo1);
             this.Name = "Form1_Sjm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Sjm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DBGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -231,7 +211,6 @@
         private System.Windows.Forms.TextBox txtNo3;
         private System.Windows.Forms.TextBox txtNo6;
         private System.Windows.Forms.TextBox txtNo5;
-        private System.Windows.Forms.TextBox txtBonus;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -239,7 +218,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView DBGridView;
         private System.Windows.Forms.TextBox txtNo1;
