@@ -31,8 +31,7 @@ namespace LottoQuiz
 
         private void testToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LottoRecommand lottoRecommand = new LottoRecommand();
-            lottoRecommand.Show();
+
         }
 
         private void 각번호를뽑은순서ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,7 +49,7 @@ namespace LottoQuiz
         private void Form1_Load(object sender, EventArgs e)
         {
             SqlServerConnect sqlServer = SqlServerConnect.CreateSQL();
-            
+
             string lottoServerStr = ConfigurationManager.ConnectionStrings["Lotto"].ConnectionString;
             sqlServer.ServerOpen(lottoServerStr);
             SqlCommand com = new SqlCommand();
@@ -66,34 +65,34 @@ namespace LottoQuiz
             }
             dr.Close();
             sqlServer.ServerClose();
-            
-                //string constr = ConfigurationManager.ConnectionStrings["Lotto"].ConnectionString;
-                //SqlConnection con = new SqlConnection(constr);
-                //SqlCommand cmd = new SqlCommand();
 
-                //try
-                //{
-                //    con.Open();
-                //    MessageBox.Show("성공");
-                //    cmd.Connection = con;
-                //    cmd.CommandType = CommandType.Text;
-                //    cmd.CommandText = "select*from forlotto";
+            //string constr = ConfigurationManager.ConnectionStrings["Lotto"].ConnectionString;
+            //SqlConnection con = new SqlConnection(constr);
+            //SqlCommand cmd = new SqlCommand();
 
-                //    var dr = cmd.ExecuteReader();
-                //    while (dr.Read())
-                //    {
-                //        MessageBox.Show(dr["NO1"].ToString());
-                //    }
-                //}
-                //catch (Exception)
-                //{
-                //    MessageBox.Show("실패");
-                //}
-                //con.Close();
+            //try
+            //{
+            //    con.Open();
+            //    MessageBox.Show("성공");
+            //    cmd.Connection = con;
+            //    cmd.CommandType = CommandType.Text;
+            //    cmd.CommandText = "select*from forlotto";
 
-            }
+            //    var dr = cmd.ExecuteReader();
+            //    while (dr.Read())
+            //    {
+            //        MessageBox.Show(dr["NO1"].ToString());
+            //    }
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("실패");
+            //}
+            //con.Close();
 
-            private void button2_Click(object sender, EventArgs e)
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
             FrmNoStat frmNoStat = new FrmNoStat();
             frmNoStat.Show();
@@ -104,37 +103,50 @@ namespace LottoQuiz
             InitializeComponent();
         }
 
+
         private void 패턴분석ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             new FrmPattern().Show();
         }
+            private void 연속번호ToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                Frmcontinuity frmcontinuity = new Frmcontinuity();
+                frmcontinuity.Show();
+            }
 
-        //private void button1_Click(object sender, EventArgs e)
-        //{            
-        //    for (int i = 1; i < 5; i++)
-        //    {
-        //        WebRequest request = WebRequest.Create("http://nlotto.co.kr/gameResult.do?method=byWin&drwNo=" + i);
-        //        WebResponse response = request.GetResponse();
-        //        Stream stream = response.GetResponseStream();
-        //        HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
-        //        doc.Load(stream);
-        //        HtmlNode root = doc.DocumentNode;
-        //        foreach (var item in root.SelectNodes("//p"))
-        //        {
-        //            if (item.GetAttributeValue("class", "") == "number")
-        //            {
-        //                no1 = int.Parse(item.ChildNodes[1].GetAttributeValue("alt", ""));
-        //                no2 = int.Parse(item.ChildNodes[3].GetAttributeValue("alt", ""));
-        //                no3 = int.Parse(item.ChildNodes[5].GetAttributeValue("alt", ""));
-        //                no4 = int.Parse(item.ChildNodes[7].GetAttributeValue("alt", ""));
-        //                no5 = int.Parse(item.ChildNodes[9].GetAttributeValue("alt", ""));
-        //                no6 = int.Parse(item.ChildNodes[11].GetAttributeValue("alt", ""));
-        //                bonusNo = int.Parse(item.ChildNodes[15].FirstChild.GetAttributeValue("alt", ""));
-        //                break;                        
-        //            }
-        //        }
-        //        WebToDB.dataLst.Add(new WebToDB(i, no1, no2, no3, no4, no5, no6, bonusNo));
-        //    }
-        //}
-    }
-}
+            private void 번호추천ToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                LottoRecommand lottoRecommand = new LottoRecommand();
+                lottoRecommand.Show();
+
+            }
+
+            //private void button1_Click(object sender, EventArgs e)
+            //{            
+            //    for (int i = 1; i < 5; i++)
+            //    {
+            //        WebRequest request = WebRequest.Create("http://nlotto.co.kr/gameResult.do?method=byWin&drwNo=" + i);
+            //        WebResponse response = request.GetResponse();
+            //        Stream stream = response.GetResponseStream();
+            //        HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+            //        doc.Load(stream);
+            //        HtmlNode root = doc.DocumentNode;
+            //        foreach (var item in root.SelectNodes("//p"))
+            //        {
+            //            if (item.GetAttributeValue("class", "") == "number")
+            //            {
+            //                no1 = int.Parse(item.ChildNodes[1].GetAttributeValue("alt", ""));
+            //                no2 = int.Parse(item.ChildNodes[3].GetAttributeValue("alt", ""));
+            //                no3 = int.Parse(item.ChildNodes[5].GetAttributeValue("alt", ""));
+            //                no4 = int.Parse(item.ChildNodes[7].GetAttributeValue("alt", ""));
+            //                no5 = int.Parse(item.ChildNodes[9].GetAttributeValue("alt", ""));
+            //                no6 = int.Parse(item.ChildNodes[11].GetAttributeValue("alt", ""));
+            //                bonusNo = int.Parse(item.ChildNodes[15].FirstChild.GetAttributeValue("alt", ""));
+            //                break;                        
+            //            }
+            //        }
+            //        WebToDB.dataLst.Add(new WebToDB(i, no1, no2, no3, no4, no5, no6, bonusNo));
+            //    }
+            //}
+        }
+    } 
