@@ -22,7 +22,38 @@ namespace LottoQuiz
         List<int> numList = new List<int>();
         WebToDB wtd;
         bool temp;
-        
+
+        private void Form1_Sjm_Load(object sender, EventArgs e)
+        {
+            #region DB연결 및 List에 저장
+            string conStr = ConfigurationManager.ConnectionStrings["Lotto"].ConnectionString;
+
+            SqlConnection con = new SqlConnection(conStr);
+            try
+            {
+                con.Open();
+            }
+            catch (Exception)
+            {
+
+
+            }
+
+            SqlCommand comm = new SqlCommand();
+            comm.Connection = con;
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandText = "SelectDB";
+
+            var dr = comm.ExecuteReader();
+            while (dr.Read())
+            {
+                WebToDB.dataLst.Add(new WebToDB(Int32.Parse(dr["DRWNO"].ToString()), Int32.Parse(dr["NO1"].ToString()), Int32.Parse(dr["NO2"].ToString()), Int32.Parse(dr["NO3"].ToString()),
+                Int32.Parse(dr["NO4"].ToString()), Int32.Parse(dr["NO5"].ToString()), Int32.Parse(dr["NO6"].ToString()), Int32.Parse(dr["BONUSNO"].ToString())));
+            }
+            dr.Close();
+            con.Close();
+            #endregion
+        }
 
         private void txtNo1_TextChanged(object sender, EventArgs e)
         {
@@ -288,38 +319,7 @@ namespace LottoQuiz
             }
 
         }
+
         #endregion
-
-        private void Form1_Sjm_Load(object sender, EventArgs e)
-        {
-            #region DB연결 및 List에 저장
-            string conStr = ConfigurationManager.ConnectionStrings["SQLConStr"].ConnectionString;
-
-            SqlConnection con = new SqlConnection(conStr);
-            try
-            {
-                con.Open();
-            }
-            catch (Exception)
-            {
-
-
-            }
-
-            SqlCommand comm = new SqlCommand();
-            comm.Connection = con;
-            comm.CommandType = CommandType.StoredProcedure;
-            comm.CommandText = "SelectDB";
-
-            var dr = comm.ExecuteReader();
-            while (dr.Read())
-            {
-                WebToDB.dataLst.Add(new WebToDB(Int32.Parse(dr["DRWNO"].ToString()), Int32.Parse(dr["NO1"].ToString()), Int32.Parse(dr["NO2"].ToString()), Int32.Parse(dr["NO3"].ToString()),
-                Int32.Parse(dr["NO4"].ToString()), Int32.Parse(dr["NO5"].ToString()), Int32.Parse(dr["NO6"].ToString()), Int32.Parse(dr["BONUSNO"].ToString())));
-            }
-            dr.Close();
-            con.Close();
-            #endregion
-        }
     }
 }
