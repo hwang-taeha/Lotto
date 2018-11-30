@@ -91,69 +91,78 @@ namespace LottoQuiz
             }
 
             #region 중복확인
-            if (numList.Contains(Int32.Parse(txtNo1.Text)))
+            try
             {
-                numList[Int32.Parse(txtNo1.Text) - 1] = 0;
+
+                if (numList.Contains(Int32.Parse(txtNo1.Text)))
+                {
+                    numList[Int32.Parse(txtNo1.Text) - 1] = 0;
+                }
+                if (numList.Contains(Int32.Parse(txtNo2.Text)))
+                {
+                    numList[Int32.Parse(txtNo2.Text) - 1] = 0;
+                }
+                else
+                {
+                    MessageBox.Show("숫자가 중복되었습니다.");
+                    temp = true;
+                    return;
+                }
+                if (numList.Contains(Int32.Parse(txtNo3.Text)))
+                {
+                    numList[Int32.Parse(txtNo3.Text) - 1] = 0;
+                }
+                else
+                {
+                    MessageBox.Show("숫자가 중복되었습니다.");
+                    temp = true;
+                    return;
+                }
+                if (numList.Contains(Int32.Parse(txtNo4.Text)))
+                {
+                    numList[Int32.Parse(txtNo4.Text) - 1] = 0;
+                }
+                else
+                {
+                    MessageBox.Show("숫자가 중복되었습니다.");
+                    temp = true;
+                    return;
+                }
+                if (numList.Contains(Int32.Parse(txtNo5.Text)))
+                {
+                    numList[Int32.Parse(txtNo5.Text) - 1] = 0;
+                }
+                else
+                {
+                    MessageBox.Show("숫자가 중복되었습니다.");
+                    temp = true;
+                    return;
+                }
+                if (numList.Contains(Int32.Parse(txtNo6.Text)))
+                {
+                    numList[Int32.Parse(txtNo6.Text) - 1] = 0;
+                }
+                else
+                {
+                    MessageBox.Show("숫자가 중복되었습니다.");
+                    temp = true;
+                    return;
+                }
+                if (numList.Contains(Int32.Parse(txtBonus.Text)))
+                {
+                    numList[Int32.Parse(txtBonus.Text) - 1] = 0;
+                }
+                else
+                {
+                    MessageBox.Show("숫자가 중복되었습니다.");
+                    temp = true;
+                    return;
+                }
             }
-            if (numList.Contains(Int32.Parse(txtNo2.Text)))
+            catch (Exception)
             {
-                numList[Int32.Parse(txtNo2.Text) - 1] = 0;
-            }
-            else
-            {
-                MessageBox.Show("숫자가 중복되었습니다.");
+                MessageBox.Show("숫자를 모두 입력해주세요","오류",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 temp = true;
-                return;
-            }
-            if (numList.Contains(Int32.Parse(txtNo3.Text)))
-            {
-                numList[Int32.Parse(txtNo3.Text) - 1] = 0;
-            }
-            else
-            {
-                MessageBox.Show("숫자가 중복되었습니다.");
-                temp = true;
-                return;
-            }
-            if (numList.Contains(Int32.Parse(txtNo4.Text)))
-            {
-                numList[Int32.Parse(txtNo4.Text) - 1] = 0;
-            }
-            else
-            {
-                MessageBox.Show("숫자가 중복되었습니다.");
-                temp = true;
-                return;
-            }
-            if (numList.Contains(Int32.Parse(txtNo5.Text)))
-            {
-                numList[Int32.Parse(txtNo5.Text) - 1] = 0;
-            }
-            else
-            {
-                MessageBox.Show("숫자가 중복되었습니다.");
-                temp = true;
-                return;
-            }
-            if (numList.Contains(Int32.Parse(txtNo6.Text)))
-            {
-                numList[Int32.Parse(txtNo6.Text) - 1] = 0;
-            }
-            else
-            {
-                MessageBox.Show("숫자가 중복되었습니다.");
-                temp = true;
-                return;
-            }
-            if (numList.Contains(Int32.Parse(txtBonus.Text)))
-            {
-                numList[Int32.Parse(txtBonus.Text) - 1] = 0;
-            }
-            else
-            {
-                MessageBox.Show("숫자가 중복되었습니다.");
-                temp = true;
-                return;
             }
             #endregion
             numList.Clear();
