@@ -31,8 +31,7 @@ namespace LottoQuiz
 
         private void testToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LottoRecommand lottoRecommand = new LottoRecommand();
-            lottoRecommand.Show();
+            
         }
 
         private void 각번호를뽑은순서ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,6 +101,18 @@ namespace LottoQuiz
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void 연속번호ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frmcontinuity frmcontinuity = new Frmcontinuity();
+            frmcontinuity.Show();
+        }
+
+        private void 번호추천ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LottoRecommand lottoRecommand = new LottoRecommand();
+            lottoRecommand.Show();
         }
 
         //private void button1_Click(object sender, EventArgs e)

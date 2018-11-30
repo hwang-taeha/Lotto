@@ -34,6 +34,8 @@
             this.각번호를뽑은순서ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.이전로또당첨확인ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.번호추천ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.연속번호ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,10 +83,27 @@
             // 
             // testToolStripMenuItem
             // 
+            this.testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.번호추천ToolStripMenuItem,
+            this.연속번호ToolStripMenuItem});
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
-            this.testToolStripMenuItem.Text = "test";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.testToolStripMenuItem.Text = "로또";
             this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
+            // 
+            // 번호추천ToolStripMenuItem
+            // 
+            this.번호추천ToolStripMenuItem.Name = "번호추천ToolStripMenuItem";
+            this.번호추천ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.번호추천ToolStripMenuItem.Text = "번호추천";
+            this.번호추천ToolStripMenuItem.Click += new System.EventHandler(this.번호추천ToolStripMenuItem_Click);
+            // 
+            // 연속번호ToolStripMenuItem
+            // 
+            this.연속번호ToolStripMenuItem.Name = "연속번호ToolStripMenuItem";
+            this.연속번호ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.연속번호ToolStripMenuItem.Text = "연속번호";
+            this.연속번호ToolStripMenuItem.Click += new System.EventHandler(this.연속번호ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -110,6 +129,8 @@
         private System.Windows.Forms.ToolStripMenuItem 각번호를뽑은순서ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 이전로또당첨확인ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 번호추천ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 연속번호ToolStripMenuItem;
     }
 }
 
