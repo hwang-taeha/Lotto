@@ -64,6 +64,12 @@
     <Compile Include="Form1_Sjm.designer.cs">
       <DependentUpon>Form1_Sjm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frmcontinuity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmcontinuity.Designer.cs">
+      <DependentUpon>Frmcontinuity.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmNoStat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1_Sjm.resx">
       <DependentUpon>Form1_Sjm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmcontinuity.resx">
+      <DependentUpon>Frmcontinuity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNoStat.resx">
       <DependentUpon>FrmNoStat.cs</DependentUpon>

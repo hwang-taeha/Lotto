@@ -67,6 +67,7 @@ C:\Lotto\LottoQuiz\obj\Debug\LottoQuiz.csproj.CoreCompileInputs.cache
 C:\Lotto\LottoQuiz\obj\Debug\LottoQuiz.csproj.CopyComplete
 C:\Lotto\LottoQuiz\obj\Debug\LottoQuiz.exe
 C:\Lotto\LottoQuiz\obj\Debug\LottoQuiz.pdb
+<<<<<<< HEAD
 =======
 D:\realLotto\LottoQuiz\bin\Debug\LottoQuiz.exe.config
 D:\realLotto\LottoQuiz\bin\Debug\LottoQuiz.exe
@@ -88,3 +89,6 @@ D:\realLotto\LottoQuiz\obj\Debug\LottoQuiz.csproj.CopyComplete
 D:\realLotto\LottoQuiz\obj\Debug\LottoQuiz.exe
 D:\realLotto\LottoQuiz\obj\Debug\LottoQuiz.pdb
 >>>>>>> master
+=======
+C:\Lotto\LottoQuiz\obj\Debug\LottoQuiz.Frmcontinuity.resources
+>>>>>>> 71547ee37b835c7e9626b97a9d42881f782ad415

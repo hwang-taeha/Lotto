@@ -13,7 +13,7 @@ namespace LottoQuiz
     public partial class LottoRecommand : Form
     {
 
-       // List<WebToDB> lottos = new List<WebToDB>();  //전체 회차별 로또번호
+        DataTable DataTable = new DataTable();
 
         int[] lottoNumbers_count = new int[45]; //번호별 뽑힌 횟수
         List<int> recommandNumbers = new List<int>(); //추천할 번호들이 모여있는 리스트
@@ -24,24 +24,7 @@ namespace LottoQuiz
         }
 
         private void LottoRecommand_Load(object sender, EventArgs e)
-        { //리스트에 저장시키기
-          //SqlServerConnect sqlServer = SqlServerConnect.CreateSQL();
-
-            //string lottoServerStr = ConfigurationManager.ConnectionStrings["ConnectLottoString"].ConnectionString;
-            //SqlCommand com = new SqlCommand();
-            //com.Connection = sqlServer.ServerOpen(lottoServerStr);
-            //com.CommandType = CommandType.StoredProcedure;
-            //com.CommandText = "SelectDB";
-
-            //SqlDataReader dr = com.ExecuteReader();
-            //while (dr.Read())
-            //{
-            //    lottos.Add(new WebToDB(Int32.Parse(dr["DRWNO"].ToString()), Int32.Parse(dr["NO1"].ToString()), Int32.Parse(dr["NO2"].ToString()), Int32.Parse(dr["NO3"].ToString()),
-            //    Int32.Parse(dr["NO4"].ToString()), Int32.Parse(dr["NO5"].ToString()), Int32.Parse(dr["NO6"].ToString()), Int32.Parse(dr["BONUSNO"].ToString())));
-            //}
-            //dr.Close();
-            //sqlServer.ServerClose();
-
+        { 
             ////회차별 뽑힌 번호들을 숫자별로 count하여 저장
             foreach (var item in WebToDB.dataLst)
             {
@@ -65,25 +48,12 @@ namespace LottoQuiz
                 }
                 
             }
-            Random random = new Random();
-
-            for (int i = 0; i < recommandationNumbers.Length; i++)
-            {
-                while (true)
-                {
-                    int temp = random.Next(0, recommandNumbers.Count-1);
-                    if (DuplicationSearch(recommandationNumbers, temp, i))//랜덤한 수를 뽑는다 추천된 배열에서
-                    {
-                        recommandationNumbers[i] = recommandNumbers[temp];  //recommandationNumbers에 값을 넣는다.
-                        break;
-                    }
-                }
-            }
-            foreach (var item in recommandationNumbers)
-            {
-                MessageBox.Show(item.ToString());
-            }
-            
+            DataTable.Columns.Add("숫자1");
+            DataTable.Columns.Add("숫자2");
+            DataTable.Columns.Add("숫자3");
+            DataTable.Columns.Add("숫자4");
+            DataTable.Columns.Add("숫자5");
+            DataTable.Columns.Add("숫자6");
 
         }
 
@@ -119,5 +89,38 @@ namespace LottoQuiz
             return retrunValue;
         }
         #endregion
+
+        private void btnRecommand_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
+
+            for (int i = 0; i < recommandationNumbers.Length; i++)
+            {
+                while (true)
+                {
+                    int temp = random.Next(0, recommandNumbers.Count - 1);
+                    if (DuplicationSearch(recommandationNumbers, temp, i))//랜덤한 수를 뽑는다 추천된 배열에서
+                    {
+                        recommandationNumbers[i] = recommandNumbers[temp];  //recommandationNumbers에 값을 넣는다.
+                        break;
+                    }
+                }
+            }
+            
+            DataRow dataRow = DataTable.NewRow();
+
+            dataRow["숫자1"] = recommandationNumbers[0];
+            dataRow["숫자2"] = recommandationNumbers[1];
+            dataRow["숫자3"] = recommandationNumbers[2];
+            dataRow["숫자4"] = recommandationNumbers[3];
+            dataRow["숫자5"] = recommandationNumbers[4];
+            dataRow["숫자6"] = recommandationNumbers[5];
+
+            DataTable.Rows.Add(dataRow);
+            dgvNumvers.DataSource = DataTable;
+            
+        }
+
+        
     }
 }
