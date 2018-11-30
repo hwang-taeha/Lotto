@@ -20,7 +20,14 @@ namespace LottoQuiz
         private void Frmcontinuity_Load(object sender, EventArgs e)
         {
             DataTable dataTable = new DataTable();
-            
+
+            dataTable.Columns.Add("숫자1");
+            dataTable.Columns.Add("숫자2");
+            dataTable.Columns.Add("숫자3");
+            dataTable.Columns.Add("숫자4");
+            dataTable.Columns.Add("숫자5");
+            dataTable.Columns.Add("숫자6");
+
 
         }
     }
