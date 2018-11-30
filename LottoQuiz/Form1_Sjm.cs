@@ -19,7 +19,7 @@ namespace LottoQuiz
     {
         List<WebToDB> list = new List<WebToDB>(); //DB 에서 저장될 List
         List<WebToDB> beforeList = new List<WebToDB>(); // 입력된 값과 비교하여 각 번호 당첨 여부를 저장할 List
-        List<int> numList = new List<int>();
+        List<int> numList = new List<int>(); //중복 검사 List
         WebToDB wtd;
         bool temp;
 
@@ -148,16 +148,6 @@ namespace LottoQuiz
                     temp = true;
                     return;
                 }
-                if (numList.Contains(Int32.Parse(txtBonus.Text)))
-                {
-                    numList[Int32.Parse(txtBonus.Text) - 1] = 0;
-                }
-                else
-                {
-                    MessageBox.Show("숫자가 중복되었습니다.");
-                    temp = true;
-                    return;
-                }
             }
             catch (Exception)
             {
@@ -172,11 +162,11 @@ namespace LottoQuiz
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ExamineNum();
+            ExamineNum();//중복 검사
             #region 중복일때 초기화작업
             if (temp == true)
             {
-                txtNo1.Text = txtNo2.Text = txtNo3.Text = txtNo4.Text = txtNo5.Text = txtNo6.Text = txtBonus.Text = "";
+                txtNo1.Text = txtNo2.Text = txtNo3.Text = txtNo4.Text = txtNo5.Text = txtNo6.Text="";
                 numList.Clear();
                 DBGridView.DataSource = "";
                 beforeList.Clear();
@@ -192,7 +182,6 @@ namespace LottoQuiz
             this.txtNo4.Text = this.txtNo4.Text.Replace(" ", "").Trim();
             this.txtNo5.Text = this.txtNo5.Text.Replace(" ", "").Trim();
             this.txtNo6.Text = this.txtNo6.Text.Replace(" ", "").Trim();
-            this.txtBonus.Text = this.txtBonus.Text.Replace(" ", "").Trim();
             #endregion
 
 
@@ -205,12 +194,14 @@ namespace LottoQuiz
             dataTable.Columns.Add("No4\n" + this.txtNo4.Text);
             dataTable.Columns.Add("No5\n" + this.txtNo5.Text);
             dataTable.Columns.Add("No6\n" + this.txtNo6.Text);
-            dataTable.Columns.Add("Bonus\n" + this.txtBonus.Text); 
+            dataTable.Columns.Add("Bonus\n");
+
             #endregion
 
 
             DBGridView.DataSource = "";
             beforeList.Clear();
+            string[] num = new string[] { this.txtNo1.Text, this.txtNo2.Text, this.txtNo3.Text, this.txtNo4.Text, this.txtNo5.Text, this.txtNo6.Text };
             #region 당첨여부 저장
             foreach (var item in WebToDB.dataLst)
             {
@@ -240,16 +231,33 @@ namespace LottoQuiz
                 {
                     wtd.No6 = 10;
                 }
-                if (this.txtBonus.Text == item.BonusNo + "")
+                string numBonus = "";
+                int[] numOX = new int[] { wtd.No1, wtd.No2, wtd.No3, wtd.No4, wtd.No5, wtd.No6 }; //당첨여부에 대한 Array
+                
+                if (wtd.No1+wtd.No2+ wtd.No3+ wtd.No4+ wtd.No5+ wtd.No6 == 50)
                 {
-                    wtd.BonusNo = 1; //2,3등을 구분하기 위해 1로 저장
+                    
+                    for (int i = 0; i < numOX.Length; i++)
+                    {
+                        if (numOX[i] == 0)
+                        {
+                            if (Int32.Parse(num[i])==item.BonusNo)
+                            {
+                                numBonus = num[i];
+                                wtd.BonusNo = 1; //2,3등을 구분하기 위해 1로 저장
+                            }
+                        }
+                    }
+                    
                 }
                 
                 if (wtd.No1 + wtd.No2 + wtd.No3 + wtd.No4 + wtd.No5 + wtd.No6 > 21) // 5등이상 리스트에 저장
                 {
+                    
                     wtd.DrwNo = item.DrwNo;
                     beforeList.Add(wtd);
-                    RowAdd(dataTable, wtd);
+                    RowAdd(dataTable, wtd, numBonus);//등수 매기기
+
                 }
             }
             #endregion
@@ -264,18 +272,18 @@ namespace LottoQuiz
             DBGridView.Columns["No4\n" + this.txtNo4.Text].Width = 40;
             DBGridView.Columns["No5\n" + this.txtNo5.Text].Width = 40;
             DBGridView.Columns["No6\n" + this.txtNo6.Text].Width = 40;
-            DBGridView.Columns["Bonus\n" + this.txtBonus.Text].Width = 70;
+            DBGridView.Columns["Bonus\n"].Width = 70;
             DBGridView.Sort(DBGridView.Columns["등수"], ListSortDirection.Ascending);
             #endregion
             //DBGridView.Sort
-            txtNo1.Text = txtNo2.Text = txtNo3.Text = txtNo4.Text = txtNo5.Text = txtNo6.Text = txtBonus.Text = "";
+            txtNo1.Text = txtNo2.Text = txtNo3.Text = txtNo4.Text = txtNo5.Text = txtNo6.Text = "";
         }
         #region 등수 매기기
-        private void RowAdd(DataTable dataTable, WebToDB item)
+        private void RowAdd(DataTable dataTable, WebToDB RowAdd_wtd, string numBonus)
         {
             DataRow dr = dataTable.NewRow();
-            dr["회차"] = wtd.DrwNo;
-            int sum = item.No1 + item.No2 + item.No3 + item.No4 + item.No5 + item.No6 + item.BonusNo;
+            dr["회차"] = RowAdd_wtd.DrwNo;
+            int sum = RowAdd_wtd.No1 + RowAdd_wtd.No2 + RowAdd_wtd.No3 + RowAdd_wtd.No4 + RowAdd_wtd.No5 + RowAdd_wtd.No6 + RowAdd_wtd.BonusNo;
             if (sum >= 60)
             {
                 dr["등수"] = 1;
@@ -297,20 +305,20 @@ namespace LottoQuiz
                 dr["등수"] = 5;
             }
 
-            dr["No1\n" + this.txtNo1.Text] = convert1or0(item.No1);
-            dr["No2\n" + this.txtNo2.Text] = convert1or0(item.No2);
-            dr["No3\n" + this.txtNo3.Text] = convert1or0(item.No3);
-            dr["No4\n" + this.txtNo4.Text] = convert1or0(item.No4);
-            dr["No5\n" + this.txtNo5.Text] = convert1or0(item.No5);
-            dr["No6\n" + this.txtNo6.Text] = convert1or0(item.No6);
-            dr["Bonus\n" + this.txtBonus.Text] = convert1or0(item.BonusNo);
+            dr["No1\n" + this.txtNo1.Text] = convert1or0(RowAdd_wtd.No1);
+            dr["No2\n" + this.txtNo2.Text] = convert1or0(RowAdd_wtd.No2);
+            dr["No3\n" + this.txtNo3.Text] = convert1or0(RowAdd_wtd.No3);
+            dr["No4\n" + this.txtNo4.Text] = convert1or0(RowAdd_wtd.No4);
+            dr["No5\n" + this.txtNo5.Text] = convert1or0(RowAdd_wtd.No5);
+            dr["No6\n" + this.txtNo6.Text] = convert1or0(RowAdd_wtd.No6);
+            dr["Bonus\n"] = convert1or0(RowAdd_wtd.BonusNo)+" "+numBonus;
             dataTable.Rows.Add(dr);
         }
         #endregion
 
         #region 1~45 외 입력 제한
         private void txtNo1_TextChanged_1(object sender, EventArgs e)
-        {
+            {
             string a = ((TextBox)sender).Text;
 
 
