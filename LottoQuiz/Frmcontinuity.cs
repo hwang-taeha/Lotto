@@ -44,32 +44,27 @@ namespace LottoQuiz
 
                 for (int j = 1; j < 6; j++)
                 {
-                    if (dataRow["숫자" + j] == dataRow["숫자" + j+1])
+                    if (int.Parse(dataRow["숫자" + j].ToString()) == int.Parse(dataRow["숫자" + (j + 1)].ToString()))
                     {
-                        
-                    } 
+
+                    }
                 }
-
-
                 dataTable.Rows.Add(dataRow);
             }
 
-            //foreach (var item in WebToDB.dataLst)
-            //{
-            //    DataRow dataRow = dataTable.NewRow();
-            //    dataRow["숫자1"] = item.No1;
-            //    dataRow["숫자2"] = item.No2;
-            //    dataRow["숫자3"] = item.No3;
-            //    dataRow["숫자4"] = item.No4;
-            //    dataRow["숫자5"] = item.No5;
-            //    dataRow["숫자6"] = item.No6;
-
-                
-
-            //    dataTable.Rows.Add(dataRow);
-            //}
+            
             dgvView.DataSource = dataTable;
 
+            foreach (var item in dgvView.Rows)
+            {
+                for (int i = 0; i < 6; i++)
+                {
+                    
+                }
+            }
+
+
+            
         }
     }
 }

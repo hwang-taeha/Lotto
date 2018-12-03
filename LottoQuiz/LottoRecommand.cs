@@ -118,7 +118,7 @@ namespace LottoQuiz
 
             DataTable.Rows.Add(dataRow);
             dgvNumvers.DataSource = DataTable;
-            
+            dgvNumvers.AutoSize = true;
         }
 
         

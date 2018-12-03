@@ -39,7 +39,7 @@
             this.dgvNumvers.Location = new System.Drawing.Point(12, 29);
             this.dgvNumvers.Name = "dgvNumvers";
             this.dgvNumvers.RowTemplate.Height = 23;
-            this.dgvNumvers.Size = new System.Drawing.Size(473, 204);
+            this.dgvNumvers.Size = new System.Drawing.Size(482, 204);
             this.dgvNumvers.TabIndex = 0;
             // 
             // btnRecommand
