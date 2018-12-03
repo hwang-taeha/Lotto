@@ -19,6 +19,7 @@ C:\Lotto\LottoQuiz\obj\Debug\LottoQuiz.csproj.CopyComplete
 C:\Lotto\LottoQuiz\obj\Debug\LottoQuiz.exe
 C:\Lotto\LottoQuiz\obj\Debug\LottoQuiz.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 D:\realLotto\LottoQuiz\bin\Debug\LottoQuiz.exe.config
 D:\realLotto\LottoQuiz\bin\Debug\LottoQuiz.exe
@@ -82,3 +83,5 @@ C:\Users\GD4\Documents\Lotto1\LottoQuiz\obj\Debug\LottoQuiz.csproj.CoreCompileIn
 C:\Users\GD4\Documents\Lotto1\LottoQuiz\obj\Debug\LottoQuiz.csproj.CopyComplete
 C:\Users\GD4\Documents\Lotto1\LottoQuiz\obj\Debug\LottoQuiz.exe
 C:\Users\GD4\Documents\Lotto1\LottoQuiz\obj\Debug\LottoQuiz.pdb
+=======
+>>>>>>> taeha
