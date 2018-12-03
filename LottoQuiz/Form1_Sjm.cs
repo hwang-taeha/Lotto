@@ -148,6 +148,23 @@ namespace LottoQuiz
                     temp = true;
                     return;
                 }
+                
+                string[] sortNum = new string[6];
+                int j = 0;
+                for (int i = 0; i < numList.Count; i++)
+                {
+                    if (numList[i]==0)
+                    {
+                        sortNum[j] = (i+1)+"";
+                        j++;
+                    } 
+                }
+                this.txtNo1.Text = sortNum[0];
+                this.txtNo2.Text = sortNum[1];
+                this.txtNo3.Text = sortNum[2];
+                this.txtNo4.Text = sortNum[3];
+                this.txtNo5.Text = sortNum[4];
+                this.txtNo6.Text = sortNum[5];
             }
             catch (Exception)
             {
@@ -183,6 +200,7 @@ namespace LottoQuiz
             this.txtNo5.Text = this.txtNo5.Text.Replace(" ", "").Trim();
             this.txtNo6.Text = this.txtNo6.Text.Replace(" ", "").Trim();
             #endregion
+
 
 
             #region 데이터테이블 컬럼추가
@@ -336,8 +354,12 @@ namespace LottoQuiz
             }
 
         }
+
         #endregion
 
-        
+        private void Form1_Sjm_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
