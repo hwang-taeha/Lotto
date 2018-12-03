@@ -1,9 +1,0 @@
-diff a/LottoQuiz/Form1_Sjm.designer.cs b/LottoQuiz/Form1_Sjm.designer.cs	(rejected hunks)
-@@ -198,6 +198,7 @@
-             this.Controls.Add(this.txtNo1);
-             this.Name = "Form1_Sjm";
-             this.Text = "Form1";
-+            this.Load += new System.EventHandler(this.Form1_Sjm_Load);
-             ((System.ComponentModel.ISupportInitialize)(this.DBGridView)).EndInit();
-             this.ResumeLayout(false);
-             this.PerformLayout();

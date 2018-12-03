@@ -198,7 +198,6 @@
             this.Controls.Add(this.txtNo1);
             this.Name = "Form1_Sjm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Sjm_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.DBGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
