@@ -32,7 +32,7 @@ namespace LottoQuiz
 
         private void button1_Click(object sender, EventArgs e)
         {
-            for (int i = 1; i < 835; i++)
+            for (int i = 1; i < 836; i++)
             {
                 WebRequest request = WebRequest.Create("http://nlotto.co.kr/gameResult.do?method=byWin&drwNo=" + i);
                 WebResponse response = request.GetResponse();
@@ -43,20 +43,28 @@ namespace LottoQuiz
 
                 drwno += 1;
 
-                foreach (var item in root.SelectNodes("//p"))
-                {
-                    if (item.GetAttributeValue("class", "") == "number")
-                    {
-                        no1 = int.Parse(item.ChildNodes[1].GetAttributeValue("alt", ""));
-                        no2 = int.Parse(item.ChildNodes[3].GetAttributeValue("alt", ""));
-                        no3 = int.Parse(item.ChildNodes[5].GetAttributeValue("alt", ""));
-                        no4 = int.Parse(item.ChildNodes[7].GetAttributeValue("alt", ""));
-                        no5 = int.Parse(item.ChildNodes[9].GetAttributeValue("alt", ""));
-                        no6 = int.Parse(item.ChildNodes[11].GetAttributeValue("alt", ""));
-                        bonusno = int.Parse(item.ChildNodes[15].FirstChild.GetAttributeValue("alt", ""));
-                        break;
-                    }
-                }
+                no1 = int.Parse(root.SelectNodes("//p")[2].ChildNodes[1].InnerText);
+                no2 = int.Parse(root.SelectNodes("//p")[2].ChildNodes[3].InnerText);
+                no3 = int.Parse(root.SelectNodes("//p")[2].ChildNodes[5].InnerText);
+                no4 = int.Parse(root.SelectNodes("//p")[2].ChildNodes[7].InnerText);
+                no5 = int.Parse(root.SelectNodes("//p")[2].ChildNodes[9].InnerText);
+                no6 = int.Parse(root.SelectNodes("//p")[2].ChildNodes[11].InnerText);
+                bonusno = int.Parse(root.SelectNodes("//p")[3].ChildNodes[0].InnerText);
+
+                //foreach (var item in root.SelectNodes("//p"))
+                //{
+                //    if (item.GetAttributeValue("class", "") == "number")
+                //    {
+                //        no1 = int.Parse(item.ChildNodes[1].GetAttributeValue("alt", ""));
+                //        no2 = int.Parse(item.ChildNodes[3].GetAttributeValue("alt", ""));
+                //        no3 = int.Parse(item.ChildNodes[5].GetAttributeValue("alt", ""));
+                //        no4 = int.Parse(item.ChildNodes[7].GetAttributeValue("alt", ""));
+                //        no5 = int.Parse(item.ChildNodes[9].GetAttributeValue("alt", ""));
+                //        no6 = int.Parse(item.ChildNodes[11].GetAttributeValue("alt", ""));
+                //        bonusno = int.Parse(item.ChildNodes[15].FirstChild.GetAttributeValue("alt", ""));
+                //        break;
+                //    }
+                //}
                 dataLst.Add(new WebToDB(drwno, no1, no2, no3, no4, no5, no6, bonusno));
 
                 string c = "Data Source = 192.168.0.2; Initial Catalog = Lotto_DB; User ID = LottoClient; Password = 1234";
