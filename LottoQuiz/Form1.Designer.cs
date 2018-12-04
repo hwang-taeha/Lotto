@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.번호별ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.번호별당첨횟수ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.각번호를뽑은순서ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.이전로또당첨확인ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-
-            this.패턴분석ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.패턴분석ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-
             this.번호추천ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.연속번호ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-
+            this.패턴분석ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.패턴분석ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -97,7 +97,20 @@
             this.testToolStripMenuItem.Text = "로또";
             this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
             // 
-
+            // 번호추천ToolStripMenuItem
+            // 
+            this.번호추천ToolStripMenuItem.Name = "번호추천ToolStripMenuItem";
+            this.번호추천ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.번호추천ToolStripMenuItem.Text = "번호추천";
+            this.번호추천ToolStripMenuItem.Click += new System.EventHandler(this.번호추천ToolStripMenuItem_Click);
+            // 
+            // 연속번호ToolStripMenuItem
+            // 
+            this.연속번호ToolStripMenuItem.Name = "연속번호ToolStripMenuItem";
+            this.연속번호ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.연속번호ToolStripMenuItem.Text = "연속번호";
+            this.연속번호ToolStripMenuItem.Click += new System.EventHandler(this.연속번호ToolStripMenuItem_Click);
+            // 
             // 패턴분석ToolStripMenuItem
             // 
             this.패턴분석ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -109,30 +122,25 @@
             // 패턴분석ToolStripMenuItem1
             // 
             this.패턴분석ToolStripMenuItem1.Name = "패턴분석ToolStripMenuItem1";
-            this.패턴분석ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.패턴분석ToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.패턴분석ToolStripMenuItem1.Text = "패턴분석";
             this.패턴분석ToolStripMenuItem1.Click += new System.EventHandler(this.패턴분석ToolStripMenuItem1_Click);
-
-            // 번호추천ToolStripMenuItem
             // 
-            this.번호추천ToolStripMenuItem.Name = "번호추천ToolStripMenuItem";
-            this.번호추천ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.번호추천ToolStripMenuItem.Text = "번호추천";
-            this.번호추천ToolStripMenuItem.Click += new System.EventHandler(this.번호추천ToolStripMenuItem_Click);
+            // pictureBox1
             // 
-            // 연속번호ToolStripMenuItem
-            // 
-            this.연속번호ToolStripMenuItem.Name = "연속번호ToolStripMenuItem";
-            this.연속번호ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.연속번호ToolStripMenuItem.Text = "연속번호";
-            this.연속번호ToolStripMenuItem.Click += new System.EventHandler(this.연속번호ToolStripMenuItem_Click);
-
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(92, 90);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(550, 329);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(811, 500);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -140,6 +148,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,7 +167,7 @@
 
         private System.Windows.Forms.ToolStripMenuItem 번호추천ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 연속번호ToolStripMenuItem;
-
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

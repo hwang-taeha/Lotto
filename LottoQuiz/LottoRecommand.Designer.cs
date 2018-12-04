@@ -35,6 +35,8 @@
             // 
             // dgvNumvers
             // 
+            this.dgvNumvers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvNumvers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvNumvers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNumvers.Location = new System.Drawing.Point(12, 29);
             this.dgvNumvers.Name = "dgvNumvers";

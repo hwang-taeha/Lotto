@@ -48,6 +48,7 @@ namespace LottoQuiz
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             SqlServerConnect sqlServer = SqlServerConnect.CreateSQL();
 
             string lottoServerStr = ConfigurationManager.ConnectionStrings["Lotto"].ConnectionString;

@@ -40,7 +40,7 @@ namespace LottoQuiz
 
             for (int i = 1; i < lottoNumbers_count.Length + 1; i++)
             {
-                float percentCount = (lottoNumbers_count[i - 1] / ((float)WebToDB.dataLst.Count * 45)) * 100000; //배열은 0부터
+                float percentCount = (lottoNumbers_count[i - 1] / ((float)WebToDB.dataLst.Count * 45)) * 1000000; //배열은 0부터
 
                 for (int j = 0; j < percentCount; j++)
                 {
@@ -109,6 +109,8 @@ namespace LottoQuiz
             
             DataRow dataRow = DataTable.NewRow();
 
+            insertionSort(recommandationNumbers);
+
             dataRow["숫자1"] = recommandationNumbers[0];
             dataRow["숫자2"] = recommandationNumbers[1];
             dataRow["숫자3"] = recommandationNumbers[2];
@@ -116,11 +118,36 @@ namespace LottoQuiz
             dataRow["숫자5"] = recommandationNumbers[4];
             dataRow["숫자6"] = recommandationNumbers[5];
 
+           
             DataTable.Rows.Add(dataRow);
             dgvNumvers.DataSource = DataTable;
-            dgvNumvers.AutoSize = true;
         }
+        #region sort
+        /// <summary>
+        /// 삽입sort
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <returns></returns>
+        public int[] insertionSort(int[] arr)
+        {
 
-        
+            for (int index = 1; index < arr.Length; index++)
+            {
+
+                int temp = arr[index];
+                int aux = index - 1;
+
+                while ((aux >= 0) && (arr[aux] > temp))
+                {
+
+                    arr[aux + 1] = arr[aux];
+                    aux--;
+                }
+                arr[aux + 1] = temp;
+            }
+            return arr;
+        } 
+        #endregion
+
     }
 }
