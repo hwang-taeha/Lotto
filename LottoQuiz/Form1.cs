@@ -122,32 +122,38 @@ namespace LottoQuiz
 
             }
 
-            //private void button1_Click(object sender, EventArgs e)
-            //{            
-            //    for (int i = 1; i < 5; i++)
-            //    {
-            //        WebRequest request = WebRequest.Create("http://nlotto.co.kr/gameResult.do?method=byWin&drwNo=" + i);
-            //        WebResponse response = request.GetResponse();
-            //        Stream stream = response.GetResponseStream();
-            //        HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
-            //        doc.Load(stream);
-            //        HtmlNode root = doc.DocumentNode;
-            //        foreach (var item in root.SelectNodes("//p"))
-            //        {
-            //            if (item.GetAttributeValue("class", "") == "number")
-            //            {
-            //                no1 = int.Parse(item.ChildNodes[1].GetAttributeValue("alt", ""));
-            //                no2 = int.Parse(item.ChildNodes[3].GetAttributeValue("alt", ""));
-            //                no3 = int.Parse(item.ChildNodes[5].GetAttributeValue("alt", ""));
-            //                no4 = int.Parse(item.ChildNodes[7].GetAttributeValue("alt", ""));
-            //                no5 = int.Parse(item.ChildNodes[9].GetAttributeValue("alt", ""));
-            //                no6 = int.Parse(item.ChildNodes[11].GetAttributeValue("alt", ""));
-            //                bonusNo = int.Parse(item.ChildNodes[15].FirstChild.GetAttributeValue("alt", ""));
-            //                break;                        
-            //            }
-            //        }
-            //        WebToDB.dataLst.Add(new WebToDB(i, no1, no2, no3, no4, no5, no6, bonusNo));
-            //    }
-            //}
+        private void dBToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmKwon frmKwon = new FrmKwon();
+            frmKwon.Show();
         }
+
+        //private void button1_Click(object sender, EventArgs e)
+        //{            
+        //    for (int i = 1; i < 5; i++)
+        //    {
+        //        WebRequest request = WebRequest.Create("http://nlotto.co.kr/gameResult.do?method=byWin&drwNo=" + i);
+        //        WebResponse response = request.GetResponse();
+        //        Stream stream = response.GetResponseStream();
+        //        HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+        //        doc.Load(stream);
+        //        HtmlNode root = doc.DocumentNode;
+        //        foreach (var item in root.SelectNodes("//p"))
+        //        {
+        //            if (item.GetAttributeValue("class", "") == "number")
+        //            {
+        //                no1 = int.Parse(item.ChildNodes[1].GetAttributeValue("alt", ""));
+        //                no2 = int.Parse(item.ChildNodes[3].GetAttributeValue("alt", ""));
+        //                no3 = int.Parse(item.ChildNodes[5].GetAttributeValue("alt", ""));
+        //                no4 = int.Parse(item.ChildNodes[7].GetAttributeValue("alt", ""));
+        //                no5 = int.Parse(item.ChildNodes[9].GetAttributeValue("alt", ""));
+        //                no6 = int.Parse(item.ChildNodes[11].GetAttributeValue("alt", ""));
+        //                bonusNo = int.Parse(item.ChildNodes[15].FirstChild.GetAttributeValue("alt", ""));
+        //                break;                        
+        //            }
+        //        }
+        //        WebToDB.dataLst.Add(new WebToDB(i, no1, no2, no3, no4, no5, no6, bonusNo));
+        //    }
+        //}
+    }
     } 

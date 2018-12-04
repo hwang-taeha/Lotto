@@ -40,6 +40,8 @@
             this.패턴분석ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.패턴분석ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dBToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +51,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.번호별ToolStripMenuItem,
             this.testToolStripMenuItem,
-            this.패턴분석ToolStripMenuItem});
+            this.패턴분석ToolStripMenuItem,
+            this.dBToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(811, 24);
@@ -135,6 +138,21 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // dBToolStripMenuItem
+            // 
+            this.dBToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dBToolStripMenuItem1});
+            this.dBToolStripMenuItem.Name = "dBToolStripMenuItem";
+            this.dBToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.dBToolStripMenuItem.Text = "DB";
+            // 
+            // dBToolStripMenuItem1
+            // 
+            this.dBToolStripMenuItem1.Name = "dBToolStripMenuItem1";
+            this.dBToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.dBToolStripMenuItem1.Text = "DB";
+            this.dBToolStripMenuItem1.Click += new System.EventHandler(this.dBToolStripMenuItem1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -168,6 +186,8 @@
         private System.Windows.Forms.ToolStripMenuItem 번호추천ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 연속번호ToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem dBToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dBToolStripMenuItem1;
     }
 }
 

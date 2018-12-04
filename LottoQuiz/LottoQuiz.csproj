@@ -70,6 +70,12 @@
     <Compile Include="Frmcontinuity.Designer.cs">
       <DependentUpon>Frmcontinuity.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmKwon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKwon.Designer.cs">
+      <DependentUpon>FrmKwon.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmNoStat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,7 @@
     <Compile Include="FrmPattern.Designer.cs">
       <DependentUpon>FrmPattern.cs</DependentUpon>
     </Compile>
+    <Compile Include="LottoData.cs" />
     <Compile Include="LottoRecommand.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frmcontinuity.resx">
       <DependentUpon>Frmcontinuity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmKwon.resx">
+      <DependentUpon>FrmKwon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNoStat.resx">
       <DependentUpon>FrmNoStat.cs</DependentUpon>
