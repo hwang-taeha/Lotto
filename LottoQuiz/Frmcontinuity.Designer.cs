@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmcontinuity));
             this.dgvView = new System.Windows.Forms.DataGridView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,6 +43,12 @@
             this.dgvView.RowTemplate.Height = 23;
             this.dgvView.Size = new System.Drawing.Size(596, 419);
             this.dgvView.TabIndex = 0;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "lo");
             // 
             // Frmcontinuity
             // 
@@ -58,5 +67,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvView;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
