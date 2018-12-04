@@ -102,7 +102,7 @@ namespace LottoQuiz
         {
            dataLst.Clear();
 
-            for (int i = 1; i <= 10; i++)
+            for (int i = int.Parse(txt1.Text); i <= int.Parse(txt2.Text); i++)
             {
                 WebRequest request = WebRequest.Create("https://www.dhlottery.co.kr/gameResult.do?method=byWin&drwNo=" + i);
                 WebResponse response = request.GetResponse();
