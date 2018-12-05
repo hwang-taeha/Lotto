@@ -72,7 +72,7 @@
             this.btnAdmit.Name = "btnAdmit";
             this.btnAdmit.Size = new System.Drawing.Size(75, 23);
             this.btnAdmit.TabIndex = 2;
-            this.btnAdmit.Text = "button1";
+            this.btnAdmit.Text = "검색";
             this.btnAdmit.UseVisualStyleBackColor = true;
             this.btnAdmit.Click += new System.EventHandler(this.btnAdmit_Click);
             // 
