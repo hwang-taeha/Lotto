@@ -140,9 +140,8 @@ namespace LottoQuiz
             dataGridView1.Show();
 
             lst.Clear();
-
-            int a = Int32.Parse(textBox1.Text);
-            WebRequest request = WebRequest.Create("https://www.dhlottery.co.kr/gameResult.do?method=byWin&drwNo=" + a);
+            
+            WebRequest request = WebRequest.Create("https://www.dhlottery.co.kr/gameResult.do?method=byWin&drwNo=" + textBox1.Text);
             WebResponse response = request.GetResponse();
 
             HtmlAgilityPack.HtmlDocument html = new HtmlAgilityPack.HtmlDocument();
@@ -150,34 +149,34 @@ namespace LottoQuiz
             HtmlNode hnc = html.DocumentNode;
             HtmlNodeCollection col = new HtmlNodeCollection(hnc);
 
-            rank = hnc.SelectNodes("//td")[1].InnerText;
-            total = hnc.SelectNodes("//td")[2].InnerText;
-            gamecount = hnc.SelectNodes("//td")[3].InnerText;
-            won = hnc.SelectNodes("//td")[4].InnerText;
+            rank = hnc.SelectNodes("//td")[0].InnerText;
+            total = hnc.SelectNodes("//td")[1].InnerText;
+            gamecount = hnc.SelectNodes("//td")[2].InnerText;
+            won = hnc.SelectNodes("//td")[3].InnerText;
             lst.Add(new LottoData(rank, total, gamecount, won));
 
-            rank = hnc.SelectNodes("//td")[7].InnerText;
-            total = hnc.SelectNodes("//td")[8].InnerText;
-            gamecount = hnc.SelectNodes("//td")[9].InnerText;
-            won = hnc.SelectNodes("//td")[10].InnerText;
+            rank = hnc.SelectNodes("//td")[6].InnerText;
+            total = hnc.SelectNodes("//td")[7].InnerText;
+            gamecount = hnc.SelectNodes("//td")[8].InnerText;
+            won = hnc.SelectNodes("//td")[9].InnerText;
             lst.Add(new LottoData(rank, total, gamecount, won));
 
-            rank = hnc.SelectNodes("//td")[12].InnerText;
-            total = hnc.SelectNodes("//td")[13].InnerText;
-            gamecount = hnc.SelectNodes("//td")[14].InnerText;
-            won = hnc.SelectNodes("//td")[15].InnerText;
+            rank = hnc.SelectNodes("//td")[11].InnerText;
+            total = hnc.SelectNodes("//td")[12].InnerText;
+            gamecount = hnc.SelectNodes("//td")[13].InnerText;
+            won = hnc.SelectNodes("//td")[14].InnerText;
             lst.Add(new LottoData(rank, total, gamecount, won));
 
-            rank = hnc.SelectNodes("//td")[17].InnerText;
-            total = hnc.SelectNodes("//td")[18].InnerText;
-            gamecount = hnc.SelectNodes("//td")[19].InnerText;
-            won = hnc.SelectNodes("//td")[20].InnerText;
+            rank = hnc.SelectNodes("//td")[16].InnerText;
+            total = hnc.SelectNodes("//td")[17].InnerText;
+            gamecount = hnc.SelectNodes("//td")[18].InnerText;
+            won = hnc.SelectNodes("//td")[19].InnerText;
             lst.Add(new LottoData(rank, total, gamecount, won));
 
-            rank = hnc.SelectNodes("//td")[22].InnerText;
-            total = hnc.SelectNodes("//td")[23].InnerText;
-            gamecount = hnc.SelectNodes("//td")[24].InnerText;
-            won = hnc.SelectNodes("//td")[25].InnerText;
+            rank = hnc.SelectNodes("//td")[21].InnerText;
+            total = hnc.SelectNodes("//td")[22].InnerText;
+            gamecount = hnc.SelectNodes("//td")[23].InnerText;
+            won = hnc.SelectNodes("//td")[24].InnerText;
             lst.Add(new LottoData(rank, total, gamecount, won));
 
             dataGridView1.DataSource = lst;
