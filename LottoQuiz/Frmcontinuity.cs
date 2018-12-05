@@ -48,16 +48,7 @@ namespace LottoQuiz
             }
             dgvView.DataSource = dataTable;
 
-            for (int i = 0; i < dgvView.RowCount - 1; i++)
-            {
-                for (int j = 1; j < 6; j++)
-                {
-                    if (int.Parse(dgvView.Rows[i].Cells[j].Value.ToString()) + 1 == int.Parse(dgvView.Rows[i].Cells[j + 1].Value.ToString()))
-                    {
-                        dgvView.Rows[i].Cells[j].Style.BackColor = dgvView.Rows[i].Cells[j + 1].Style.BackColor = Color.Turquoise;
-                    }
-                }
-            }
+            ColorPainting();
 
         }
 
@@ -87,16 +78,7 @@ namespace LottoQuiz
             }
             dgvView.DataSource = dataTable;
 
-            for (int i = 0; i < dgvView.RowCount - 1; i++)
-            {
-                for (int j = 1; j < 6; j++)
-                {
-                    if (int.Parse(dgvView.Rows[i].Cells[j].Value.ToString()) + 1 == int.Parse(dgvView.Rows[i].Cells[j + 1].Value.ToString()))
-                    {
-                        dgvView.Rows[i].Cells[j].Style.BackColor = dgvView.Rows[i].Cells[j + 1].Style.BackColor = Color.Turquoise;
-                    }
-                }
-            }
+            ColorPainting();
         }
 
         private void btnback_Click(object sender, EventArgs e)
@@ -129,16 +111,7 @@ namespace LottoQuiz
                 }
                 dgvView.DataSource = dataTable;
 
-                for (int i = 0; i < dgvView.RowCount - 1; i++)
-                {
-                    for (int j = 1; j < 6; j++)
-                    {
-                        if (int.Parse(dgvView.Rows[i].Cells[j].Value.ToString()) + 1 == int.Parse(dgvView.Rows[i].Cells[j + 1].Value.ToString()))
-                        {
-                            dgvView.Rows[i].Cells[j].Style.BackColor = dgvView.Rows[i].Cells[j + 1].Style.BackColor = Color.Turquoise;
-                        }
-                    }
-                }
+                ColorPainting();
 
             }
         }
@@ -186,19 +159,25 @@ namespace LottoQuiz
                     dataTable.Rows.Add(dataRow);
                 }
                 dgvView.DataSource = dataTable;
+                ColorPainting();
+            }
 
-                for (int i = 0; i < dgvView.RowCount - 1; i++)
+        }
+        /// <summary>
+        /// 색칠하기
+        /// </summary>
+        private void ColorPainting()
+        {
+            for (int i = 0; i < dgvView.RowCount - 1; i++)
+            {
+                for (int j = 1; j < 6; j++)
                 {
-                    for (int j = 1; j < 6; j++)
+                    if (int.Parse(dgvView.Rows[i].Cells[j].Value.ToString()) + 1 == int.Parse(dgvView.Rows[i].Cells[j + 1].Value.ToString()))
                     {
-                        if (int.Parse(dgvView.Rows[i].Cells[j].Value.ToString()) + 1 == int.Parse(dgvView.Rows[i].Cells[j + 1].Value.ToString()))
-                        {
-                            dgvView.Rows[i].Cells[j].Style.BackColor = dgvView.Rows[i].Cells[j + 1].Style.BackColor = Color.Turquoise;
-                        }
+                        dgvView.Rows[i].Cells[j].Style.BackColor = dgvView.Rows[i].Cells[j + 1].Style.BackColor = Color.Turquoise;
                     }
                 }
             }
-
         }
     }
 }

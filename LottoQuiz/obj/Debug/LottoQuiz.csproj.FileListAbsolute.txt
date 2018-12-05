@@ -39,3 +39,4 @@ C:\Users\llsw1\Documents\LottoEx\LottoQuiz\obj\Debug\LottoQuiz.csproj.CopyComple
 C:\Users\llsw1\Documents\LottoEx\LottoQuiz\obj\Debug\LottoQuiz.exe
 C:\Users\llsw1\Documents\LottoEx\LottoQuiz\obj\Debug\LottoQuiz.pdb
 C:\Users\llsw1\Documents\LottoEx\LottoQuiz\obj\Debug\LottoQuiz.FrmKwon.resources
+C:\Lotto\LottoQuiz\obj\Debug\LottoQuiz.FrmKwon.resources
