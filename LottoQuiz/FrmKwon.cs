@@ -100,11 +100,20 @@ namespace LottoQuiz
 
         private void btnView_Click(object sender, EventArgs e)
         {
+            drwno = 0;
+            dataGridView1.DataSource = "";
+            dataGridView1.Show();
             dataLst.Clear();
 
-            if (txt1.Text == "" || txt2.Text == "" || int.Parse(txt1.Text) > int.Parse(txt2.Text))
+            if (txt1.Text == "" || txt2.Text == "")
             {
                 MessageBox.Show("오류");
+            }
+            else if (int.Parse(txt1.Text) > int.Parse(txt2.Text))
+            {
+                string temp = txt1.Text;
+                txt1.Text = txt2.Text;
+                txt2.Text = temp;
             }
             else
             {
@@ -139,11 +148,14 @@ namespace LottoQuiz
                 dataGridView1.Columns["bonusno"].HeaderText = "보너스번호";
                 dataGridView1.Show();
                 MessageBox.Show("완료");
-            }
+            }     
         } // 회차 출력
 
         private void button2_Click(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = "";
+            dataGridView1.Show();
+
             if (textBox1.Text == "") // @"[0-9]"
             {
                 MessageBox.Show("공백입니다");
