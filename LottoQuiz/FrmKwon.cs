@@ -100,92 +100,106 @@ namespace LottoQuiz
 
         private void btnView_Click(object sender, EventArgs e)
         {
-           dataLst.Clear();
+            dataLst.Clear();
 
-            for (int i = int.Parse(txt1.Text); i <= int.Parse(txt2.Text); i++)
+            if (txt1.Text == "" || txt2.Text == "" || int.Parse(txt1.Text) > int.Parse(txt2.Text))
             {
-                WebRequest request = WebRequest.Create("https://www.dhlottery.co.kr/gameResult.do?method=byWin&drwNo=" + i);
-                WebResponse response = request.GetResponse();
-                Stream stream = response.GetResponseStream();
-                HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
-                doc.Load(stream);
-                HtmlNode root = doc.DocumentNode;
-                drwno += 1;
-                no1 = int.Parse(root.SelectNodes("//p")[2].ChildNodes[1].InnerText);
-                no2 = int.Parse(root.SelectNodes("//p")[2].ChildNodes[3].InnerText);
-                no3 = int.Parse(root.SelectNodes("//p")[2].ChildNodes[5].InnerText);
-                no4 = int.Parse(root.SelectNodes("//p")[2].ChildNodes[7].InnerText);
-                no5 = int.Parse(root.SelectNodes("//p")[2].ChildNodes[9].InnerText);
-                no6 = int.Parse(root.SelectNodes("//p")[2].ChildNodes[11].InnerText);
-                bonusno = int.Parse(root.SelectNodes("//p")[3].ChildNodes[0].InnerText);
-
-               dataLst.Add(new WebToDB(drwno, no1, no2, no3, no4, no5, no6, bonusno));
+                MessageBox.Show("오류");
             }
+            else
+            {
+                for (int i = int.Parse(txt1.Text); i <= int.Parse(txt2.Text); i++)
+                {
+                    WebRequest request = WebRequest.Create("https://www.dhlottery.co.kr/gameResult.do?method=byWin&drwNo=" + i);
+                    WebResponse response = request.GetResponse();
+                    Stream stream = response.GetResponseStream();
+                    HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+                    doc.Load(stream);
+                    HtmlNode root = doc.DocumentNode;
+                    drwno += 1;
+                    no1 = int.Parse(root.SelectNodes("//p")[2].ChildNodes[1].InnerText);
+                    no2 = int.Parse(root.SelectNodes("//p")[2].ChildNodes[3].InnerText);
+                    no3 = int.Parse(root.SelectNodes("//p")[2].ChildNodes[5].InnerText);
+                    no4 = int.Parse(root.SelectNodes("//p")[2].ChildNodes[7].InnerText);
+                    no5 = int.Parse(root.SelectNodes("//p")[2].ChildNodes[9].InnerText);
+                    no6 = int.Parse(root.SelectNodes("//p")[2].ChildNodes[11].InnerText);
+                    bonusno = int.Parse(root.SelectNodes("//p")[3].ChildNodes[0].InnerText);
 
-            dataGridView1.DataSource = dataLst;
-            dataGridView1.Columns["drwno"].HeaderText = "회차";
-            dataGridView1.Columns["no1"].HeaderText = "첫번째";
-            dataGridView1.Columns["no2"].HeaderText = "두번째";
-            dataGridView1.Columns["no3"].HeaderText = "세번째";
-            dataGridView1.Columns["no4"].HeaderText = "네번째";
-            dataGridView1.Columns["no5"].HeaderText = "다섯번째";
-            dataGridView1.Columns["no6"].HeaderText = "여섯번째";
-            dataGridView1.Columns["bonusno"].HeaderText = "보너스번호";
-            dataGridView1.Show();
-            MessageBox.Show("완료");
+                    dataLst.Add(new WebToDB(drwno, no1, no2, no3, no4, no5, no6, bonusno));
+                }
+
+                dataGridView1.DataSource = dataLst;
+                dataGridView1.Columns["drwno"].HeaderText = "회차";
+                dataGridView1.Columns["no1"].HeaderText = "첫번째";
+                dataGridView1.Columns["no2"].HeaderText = "두번째";
+                dataGridView1.Columns["no3"].HeaderText = "세번째";
+                dataGridView1.Columns["no4"].HeaderText = "네번째";
+                dataGridView1.Columns["no5"].HeaderText = "다섯번째";
+                dataGridView1.Columns["no6"].HeaderText = "여섯번째";
+                dataGridView1.Columns["bonusno"].HeaderText = "보너스번호";
+                dataGridView1.Show();
+                MessageBox.Show("완료");
+            }
         } // 회차 출력
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dataGridView1.Show();
+            if (textBox1.Text == "") // @"[0-9]"
+            {
+                MessageBox.Show("공백입니다");
+            }
+            else
+            {
+                dataGridView1.Show();
 
-            lst.Clear();
-            
-            WebRequest request = WebRequest.Create("https://www.dhlottery.co.kr/gameResult.do?method=byWin&drwNo=" + textBox1.Text);
-            WebResponse response = request.GetResponse();
+                lst.Clear();
 
-            HtmlAgilityPack.HtmlDocument html = new HtmlAgilityPack.HtmlDocument();
-            html.Load(response.GetResponseStream());
-            HtmlNode hnc = html.DocumentNode;
-            HtmlNodeCollection col = new HtmlNodeCollection(hnc);
+                WebRequest request = WebRequest.Create("https://www.dhlottery.co.kr/gameResult.do?method=byWin&drwNo=" + textBox1.Text);
+                WebResponse response = request.GetResponse();
 
-            rank = hnc.SelectNodes("//td")[0].InnerText;
-            total = hnc.SelectNodes("//td")[1].InnerText;
-            gamecount = hnc.SelectNodes("//td")[2].InnerText;
-            won = hnc.SelectNodes("//td")[3].InnerText;
-            lst.Add(new LottoData(rank, total, gamecount, won));
+                HtmlAgilityPack.HtmlDocument html = new HtmlAgilityPack.HtmlDocument();
+                html.Load(response.GetResponseStream());
+                HtmlNode hnc = html.DocumentNode;
+                HtmlNodeCollection col = new HtmlNodeCollection(hnc);
 
-            rank = hnc.SelectNodes("//td")[6].InnerText;
-            total = hnc.SelectNodes("//td")[7].InnerText;
-            gamecount = hnc.SelectNodes("//td")[8].InnerText;
-            won = hnc.SelectNodes("//td")[9].InnerText;
-            lst.Add(new LottoData(rank, total, gamecount, won));
+                rank = hnc.SelectNodes("//td")[0].InnerText;
+                total = hnc.SelectNodes("//td")[1].InnerText;
+                gamecount = hnc.SelectNodes("//td")[2].InnerText;
+                won = hnc.SelectNodes("//td")[3].InnerText;
+                lst.Add(new LottoData(rank, total, gamecount, won));
 
-            rank = hnc.SelectNodes("//td")[11].InnerText;
-            total = hnc.SelectNodes("//td")[12].InnerText;
-            gamecount = hnc.SelectNodes("//td")[13].InnerText;
-            won = hnc.SelectNodes("//td")[14].InnerText;
-            lst.Add(new LottoData(rank, total, gamecount, won));
+                rank = hnc.SelectNodes("//td")[6].InnerText;
+                total = hnc.SelectNodes("//td")[7].InnerText;
+                gamecount = hnc.SelectNodes("//td")[8].InnerText;
+                won = hnc.SelectNodes("//td")[9].InnerText;
+                lst.Add(new LottoData(rank, total, gamecount, won));
 
-            rank = hnc.SelectNodes("//td")[16].InnerText;
-            total = hnc.SelectNodes("//td")[17].InnerText;
-            gamecount = hnc.SelectNodes("//td")[18].InnerText;
-            won = hnc.SelectNodes("//td")[19].InnerText;
-            lst.Add(new LottoData(rank, total, gamecount, won));
+                rank = hnc.SelectNodes("//td")[11].InnerText;
+                total = hnc.SelectNodes("//td")[12].InnerText;
+                gamecount = hnc.SelectNodes("//td")[13].InnerText;
+                won = hnc.SelectNodes("//td")[14].InnerText;
+                lst.Add(new LottoData(rank, total, gamecount, won));
 
-            rank = hnc.SelectNodes("//td")[21].InnerText;
-            total = hnc.SelectNodes("//td")[22].InnerText;
-            gamecount = hnc.SelectNodes("//td")[23].InnerText;
-            won = hnc.SelectNodes("//td")[24].InnerText;
-            lst.Add(new LottoData(rank, total, gamecount, won));
+                rank = hnc.SelectNodes("//td")[16].InnerText;
+                total = hnc.SelectNodes("//td")[17].InnerText;
+                gamecount = hnc.SelectNodes("//td")[18].InnerText;
+                won = hnc.SelectNodes("//td")[19].InnerText;
+                lst.Add(new LottoData(rank, total, gamecount, won));
 
-            dataGridView1.DataSource = lst;
-            dataGridView1.Columns["rank"].HeaderText = "순위";
-            dataGridView1.Columns["total"].HeaderText = "등위별 총 당첨금액";
-            dataGridView1.Columns["gamecount"].HeaderText = "당첨게임 수";
-            dataGridView1.Columns["won"].HeaderText = "1게임당 당첨금액";
-            dataGridView1.Show();
-            MessageBox.Show("완료");
+                rank = hnc.SelectNodes("//td")[21].InnerText;
+                total = hnc.SelectNodes("//td")[22].InnerText;
+                gamecount = hnc.SelectNodes("//td")[23].InnerText;
+                won = hnc.SelectNodes("//td")[24].InnerText;
+                lst.Add(new LottoData(rank, total, gamecount, won));
+
+                dataGridView1.DataSource = lst;
+                dataGridView1.Columns["rank"].HeaderText = "순위";
+                dataGridView1.Columns["total"].HeaderText = "등위별 총 당첨금액";
+                dataGridView1.Columns["gamecount"].HeaderText = "당첨게임 수";
+                dataGridView1.Columns["won"].HeaderText = "1게임당 당첨금액";
+                dataGridView1.Show();
+                MessageBox.Show("완료");
+            }
         } // 그리드 뷰 보기
     }
 }
