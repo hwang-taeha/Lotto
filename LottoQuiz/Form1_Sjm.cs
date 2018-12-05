@@ -207,32 +207,41 @@ namespace LottoQuiz
             {
                 wtd = new WebToDB();
                 wtd.No1 = wtd.No2 = wtd.No3 = wtd.No4 = wtd.No5 = wtd.No6 = wtd.BonusNo = 0;
-                if (this.txtNo1.Text == item.No1 + "")
+                int[] numOX = new int[6]; //당첨여부에 대한 Array
+                for (int i = 0; i < num.Length; i++)
                 {
-                    wtd.No1 = 10;
-                }
-                if (this.txtNo2.Text == item.No2 + "")
-                {
-                    wtd.No2 = 10;
-                }
-                if (this.txtNo3.Text == item.No3 + "")
-                {
-                    wtd.No3 = 10;
-                }
-                if (this.txtNo4.Text == item.No4 + "")
-                {
-                    wtd.No4 = 10;
-                }
-                if (this.txtNo5.Text == item.No5 + "")
-                {
-                    wtd.No5 = 10;
-                }
-                if (this.txtNo6.Text == item.No6 + "")
-                {
-                    wtd.No6 = 10;
+                    if (num[i] == item.No1 + "")
+                    {
+                        numOX[i] = 10;
+                    }
+                    else if (num[i] == item.No2 + "")
+                    {
+                        numOX[i] = 10;
+                    }
+                    else if (num[i] == item.No3 + "")
+                    {
+                        numOX[i] = 10;
+                    }
+                    else if (num[i] == item.No4 + "")
+                    {
+                        numOX[i] = 10;
+                    }
+                    else if (num[i] == item.No5 + "")
+                    {
+                        numOX[i] = 10;
+                    }
+                    else if (num[i] == item.No6 + "")
+                    {
+                        numOX[i] = 10;
+                    }
                 }
                 string numBonus = "";
-                int[] numOX = new int[] { wtd.No1, wtd.No2, wtd.No3, wtd.No4, wtd.No5, wtd.No6 }; //당첨여부에 대한 Array
+                wtd.No1=numOX[0];
+                wtd.No2=numOX[1];
+                wtd.No3=numOX[2];
+                wtd.No4=numOX[3];
+                wtd.No5=numOX[4];
+                wtd.No6=numOX[5];
                 
                 if (wtd.No1+wtd.No2+ wtd.No3+ wtd.No4+ wtd.No5+ wtd.No6 == 50)
                 {
@@ -336,8 +345,12 @@ namespace LottoQuiz
             }
 
         }
+
         #endregion
 
-        
+        private void Form1_Sjm_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
