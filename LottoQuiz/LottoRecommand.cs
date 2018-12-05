@@ -139,7 +139,6 @@ namespace LottoQuiz
 
                 while ((aux >= 0) && (arr[aux] > temp))
                 {
-
                     arr[aux + 1] = arr[aux];
                     aux--;
                 }
