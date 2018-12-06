@@ -197,7 +197,7 @@
             this.Controls.Add(this.txtNo2);
             this.Controls.Add(this.txtNo1);
             this.Name = "Form1_Sjm";
-            this.Text = "Form1";
+            this.Text = "이전 로또당첨확인";
             this.Load += new System.EventHandler(this.Form1_Sjm_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.DBGridView)).EndInit();
             this.ResumeLayout(false);

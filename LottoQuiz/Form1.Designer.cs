@@ -39,9 +39,9 @@
             this.연속번호ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.패턴분석ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.패턴분석ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dBToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -129,15 +129,6 @@
             this.패턴분석ToolStripMenuItem1.Text = "패턴분석";
             this.패턴분석ToolStripMenuItem1.Click += new System.EventHandler(this.패턴분석ToolStripMenuItem1_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(92, 90);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(550, 329);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // dBToolStripMenuItem
             // 
             this.dBToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -149,9 +140,18 @@
             // dBToolStripMenuItem1
             // 
             this.dBToolStripMenuItem1.Name = "dBToolStripMenuItem1";
-            this.dBToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.dBToolStripMenuItem1.Size = new System.Drawing.Size(90, 22);
             this.dBToolStripMenuItem1.Text = "DB";
             this.dBToolStripMenuItem1.Click += new System.EventHandler(this.dBToolStripMenuItem1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(92, 90);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(550, 329);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -162,7 +162,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "우리의 로또";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

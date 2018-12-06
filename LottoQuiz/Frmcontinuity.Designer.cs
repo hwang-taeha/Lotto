@@ -95,7 +95,7 @@
             this.Controls.Add(this.btnAll);
             this.Controls.Add(this.dgvView);
             this.Name = "Frmcontinuity";
-            this.Text = "Frmcontinuity";
+            this.Text = "연속번호 확인";
             this.Load += new System.EventHandler(this.Frmcontinuity_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvView)).EndInit();
             this.ResumeLayout(false);

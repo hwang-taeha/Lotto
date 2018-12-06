@@ -85,7 +85,7 @@
             this.Controls.Add(this.numDrwNo);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmPattern";
-            this.Text = "FrmPattern";
+            this.Text = "로또패턴";
             this.Load += new System.EventHandler(this.FrmPattern_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDrwNo)).EndInit();

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.gridNum = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -42,22 +42,22 @@
             // 
             // chart1
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Left;
-            legend5.ItemColumnSpacing = 1;
-            legend5.Name = "Legend1";
-            this.chart1.Legends.Add(legend5);
+            legend1.ItemColumnSpacing = 1;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.MarkerSize = 1;
-            series5.Name = "Series1";
-            series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series5.YValuesPerPoint = 2;
-            series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.chart1.Series.Add(series5);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.MarkerSize = 1;
+            series1.Name = "Series1";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series1.YValuesPerPoint = 2;
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(721, 711);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -115,7 +115,7 @@
             this.Controls.Add(this.gridNum);
             this.Controls.Add(this.chart1);
             this.Name = "FrmNoStat";
-            this.Text = "FrmNoStat";
+            this.Text = "번호별당첨";
             this.Load += new System.EventHandler(this.FrmNoStat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridNum)).EndInit();
