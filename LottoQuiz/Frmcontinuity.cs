@@ -16,6 +16,7 @@ namespace LottoQuiz
         {
             InitializeComponent();
         }
+        DataTable dataTable;
         int currentDrwNO = 20;//그리드 뷰에 출력되는 마지막 회차
         //int[,] duplicateNumber;
 
@@ -24,7 +25,7 @@ namespace LottoQuiz
             //  duplicateNumber = new int[WebToDB.dataLst.Count, 6];
 
 
-            DataTable dataTable = new DataTable();
+            dataTable = new DataTable();
             dataTable.Columns.Add("회차");
             dataTable.Columns.Add("숫자1");
             dataTable.Columns.Add("숫자2");
@@ -54,15 +55,8 @@ namespace LottoQuiz
 
         private void btnAll_Click(object sender, EventArgs e)
         {
-            DataTable dataTable = new DataTable();
-            dataTable.Columns.Add("회차");
-            dataTable.Columns.Add("숫자1");
-            dataTable.Columns.Add("숫자2");
-            dataTable.Columns.Add("숫자3");
-            dataTable.Columns.Add("숫자4");
-            dataTable.Columns.Add("숫자5");
-            dataTable.Columns.Add("숫자6");
 
+            dataTable.Clear();
             for (int i = 0; i < WebToDB.dataLst.Count; i++)
             {
                 DataRow dataRow = dataTable.NewRow();
@@ -87,17 +81,11 @@ namespace LottoQuiz
             if (currentDrwNO > 20)
             {
                 currentDrwNO -= 20;
-                DataTable dataTable = new DataTable();
-                dataTable.Columns.Add("회차");
-                dataTable.Columns.Add("숫자1");
-                dataTable.Columns.Add("숫자2");
-                dataTable.Columns.Add("숫자3");
-                dataTable.Columns.Add("숫자4");
-                dataTable.Columns.Add("숫자5");
-                dataTable.Columns.Add("숫자6");
 
+                dataTable.Clear();
                 for (int i = currentDrwNO - 20; i < currentDrwNO; i++)
                 {
+
                     DataRow dataRow = dataTable.NewRow();
                     dataRow["회차"] = WebToDB.dataLst[i].DrwNo;
                     dataRow["숫자1"] = WebToDB.dataLst[i].No1;
@@ -136,17 +124,11 @@ namespace LottoQuiz
             if (currentDrwNO < WebToDB.dataLst.Count)
             {
                 currentDrwNO += 20;
-                DataTable dataTable = new DataTable();
-                dataTable.Columns.Add("회차");
-                dataTable.Columns.Add("숫자1");
-                dataTable.Columns.Add("숫자2");
-                dataTable.Columns.Add("숫자3");
-                dataTable.Columns.Add("숫자4");
-                dataTable.Columns.Add("숫자5");
-                dataTable.Columns.Add("숫자6");
 
+                dataTable.Clear();
                 for (int i = currentDrwNO - 20; i < ListOverflow(currentDrwNO); i++)
                 {
+                    
                     DataRow dataRow = dataTable.NewRow();
                     dataRow["회차"] = WebToDB.dataLst[i].DrwNo;
                     dataRow["숫자1"] = WebToDB.dataLst[i].No1;
