@@ -132,7 +132,7 @@
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmKwon";
-            this.Text = "오빈이의 로또파싱";
+            this.Text = "데이터 파싱";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

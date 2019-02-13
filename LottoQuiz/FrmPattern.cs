@@ -29,14 +29,21 @@ namespace LottoQuiz
         private void FrmPattern_Load(object sender, EventArgs e)
         {
             #region 그리드 뷰에 데이터 넣음
+
             DataTable dt = new DataTable();
-            dt.Columns.Add("1");
-            dt.Columns.Add("2");
-            dt.Columns.Add("3");
-            dt.Columns.Add("4");
-            dt.Columns.Add("5");
-            dt.Columns.Add("6");
-            dt.Columns.Add("7");
+            for (int i = 1; i < 8; i++)
+            {
+                dt.Columns.Add(i.ToString());
+            }
+
+            //dt.Columns.Add("1");
+            //dt.Columns.Add("2");
+            //dt.Columns.Add("3");
+            //dt.Columns.Add("4");
+            //dt.Columns.Add("5");
+            //dt.Columns.Add("6");
+            //dt.Columns.Add("7");
+
             DataGridViewRowCollection dgv = new DataGridViewRowCollection(dataGridView1);
 
             for (int i = 0; i < 45;)

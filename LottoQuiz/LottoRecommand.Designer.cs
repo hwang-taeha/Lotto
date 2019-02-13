@@ -73,7 +73,7 @@
             this.Controls.Add(this.btnRecommand);
             this.Controls.Add(this.dgvNumvers);
             this.Name = "LottoRecommand";
-            this.Text = "오빈이의 번호추천";
+            this.Text = "로또 번호추천";
             this.Load += new System.EventHandler(this.LottoRecommand_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNumvers)).EndInit();
             this.ResumeLayout(false);
